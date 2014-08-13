@@ -9,6 +9,8 @@ subprojects {
 
   dependencies {
     compile 'org.codehaus.groovy:groovy:2.3.3'
+    testCompile 'junit:junit:4.11'
+    testCompile 'org.easytesting:fest-assert:1.4'
   }
 
 }
