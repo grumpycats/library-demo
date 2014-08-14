@@ -1,3 +1,7 @@
+package org.metaslack.grumpycats.library.domain
+
+import org.metaslack.grumpycats.library.domain.Entity
+
 class Book extends Entity<Long> {
   String title
   Book(String title, Long id) {
