@@ -2,26 +2,26 @@ package org.metaslack.grumpycats.library.store
 
 
 class VolatileMap<I, T extends Serializable> implements Store {
-  Map<I, Wrapper<T>> store
+  Map<I, Wrapper<T>> map
 
-  VolatileMap(Map store) {
-    this.store = store
+  VolatileMap(Map map) {
+    this.map = map
   }
 
   @Override
   void create(Object id, Wrapper data) {
-    store.put((I)id, data)
+    map.put((I)id, data)
   }
 
   @Override
   Wrapper read(Object id) {
-    store.get(id)
+    map.get(id)
   }
 
   @Override
   List<Wrapper> readAll() {
     List<Wrapper> wrappers = new ArrayList<>()
-    store.values().each { def value ->
+    map.values().each { def value ->
       wrappers.add(value)
     }
     wrappers
@@ -29,15 +29,15 @@ class VolatileMap<I, T extends Serializable> implements Store {
 
   @Override
   void update(Object id, Wrapper data) {
-    store.put((I)id, data)
+    map.put((I)id, data)
   }
 
   @Override
   void delete(Object id) {
-    Wrapper<T> wrapper = store.get(id)
+    Wrapper<T> wrapper = map.get(id)
     if (wrapper) {
       wrapper.isDeleted = true
-      store.put((I)id, wrapper)
+      map.put((I)id, wrapper)
     }
   }
 
