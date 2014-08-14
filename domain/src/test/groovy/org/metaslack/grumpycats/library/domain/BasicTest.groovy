@@ -1,4 +1,9 @@
+package org.metaslack.grumpycats.library.domain
+
 import org.junit.Test
+import org.metaslack.grumpycats.library.domain.Book
+import org.metaslack.grumpycats.library.domain.Loan
+import org.metaslack.grumpycats.library.domain.User
 
 import static org.fest.assertions.Assertions.assertThat
 

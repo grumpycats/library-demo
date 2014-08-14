@@ -1,3 +1,7 @@
+package org.metaslack.grumpycats.library.domain
+
+import org.metaslack.grumpycats.library.domain.Entity
+
 class Loan extends Entity<Long> {
   Long bookId
   Long userId
